@@ -1,0 +1,23 @@
+--- monit.h.original	2024-08-21 15:49:52.190720400 +0200
++++ monit.h	2024-08-21 15:52:36.160927700 +0200
+@@ -22,6 +22,20 @@
+  * for all of the code used other than OpenSSL.
+  */
+ 
++// TO CREATE THE DIFF FILE: diff -Naru monit.h.original monit.h > monit.h.patch 
++// CYGWIN ADDED LINES START 
++#ifdef CYGWIN
++#ifndef ICMP_ECHO
++#define ICMP_ECHO 8
++#endif
++#ifndef ICMP_ECHOREPLY
++#define ICMP_ECHOREPLY 20
++#endif
++#ifndef GLOB_ONLYDIR
++#define GLOB_ONLYDIR 0
++#endif
++#endif
++// CYGWIN ADDED LINES END 
+ 
+ #ifndef MONIT_H
+ #define MONIT_H

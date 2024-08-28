@@ -1,0 +1,19 @@
+--- configure.ac.original	2024-08-21 17:26:44.500711300 +0200
++++ configure.ac	2024-08-21 17:30:02.533820100 +0200
+@@ -587,6 +587,16 @@
+    # AIX v. 5.3
+    LIBS="$LIBS -lperfstat"	
+    AC_DEFINE([HAVE_CPU_WAIT], [1], [Define to 1 if CPU wait information is available.])
++
++##### TO CREATE THE DIFF FILE: diff -Naru configure.ac.original configure.ac > monit_configure.ac.patch 
++###### CYGWIN ADDED LINES START #####
++elif test "${architecture:0:6}" = "CYGWIN" # CYGWIN_NT-6.1 -> CYGWIN
++then
++	ARCH="CYGWIN"
++	CFLAGS="$CFLAGS -D _REENTRANT -Uunix"
++	LDFLAGS="$LDFLAGS -rdynamic"
++###### CYGWIN ADDED LINES END ######
++
+ else
+    AC_MSG_WARN([Architecture not supported: ${architecture}])
+    CFLAGS="$CFLAGS -D _REENTRANT"

@@ -1,0 +1,26 @@
+--- net.c.original	2024-08-21 15:57:40.789573000 +0200
++++ net.c	2024-08-21 16:19:33.834445500 +0200
+@@ -297,6 +297,17 @@
+  * permissions for raw socket (normally requires root or net_icmpaccess
+  * privilege on Solaris)
+  */
++ 
++// TO CREATE THE DIFF FILE: diff -Naru net.c.original net.c > net.c.patch 
++// CYGWIN ADDED LINES START #####
++
++#ifdef CYGWIN
++double icmp_echo(const char *hostname, Socket_Family family, int timeout, int count) {
++	return -1;
++}
++#else	
++// CYGWIN ADDED LINES END ######
++ 
+ double icmp_echo(const char *hostname, Socket_Family family, int timeout, int count) {
+         ASSERT(hostname);
+         double response = -1.;
+@@ -498,3 +509,4 @@
+         return response;
+ }
+ 
++#endif
+\ No newline at end of file
