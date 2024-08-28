@@ -11,6 +11,7 @@ To install CygMonit download from InnoSetups folder your preferred monit version
 
 Available versions: 
 
+https://github.com/kfeina/CygMonit/tree/main/InnoSetups/CygMonit_5.14_Setup-x86.exe
 https://github.com/kfeina/CygMonit/tree/main/InnoSetups/CygMonit_5.10_Setup-x86.exe
 
 
