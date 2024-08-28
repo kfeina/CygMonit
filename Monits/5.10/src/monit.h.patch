@@ -1,0 +1,23 @@
+--- monit.h.original	2024-08-21 12:46:34.653700300 +0200
++++ monit.h	2024-08-21 12:49:22.687208200 +0200
+@@ -86,6 +86,20 @@
+ #include "util/Str.h"
+ #include "util/StringBuffer.h"
+ 
++// TO CREATE THE DIFF FILE: diff -Naru monit.h.original monit.h > monit.h.patch 
++// CYGWIN ADDED LINES START 
++#ifdef CYGWIN
++#ifndef ICMP_ECHO
++#define ICMP_ECHO 8
++#endif
++#ifndef ICMP_ECHOREPLY
++#define ICMP_ECHOREPLY 20
++#endif
++#ifndef GLOB_ONLYDIR
++#define GLOB_ONLYDIR 0
++#endif
++#endif
++// CYGWIN ADDED LINES END 
+ 
+ #define MONITRC            "monitrc"
+ #define TIMEFORMAT         "%Z %b %e %T"

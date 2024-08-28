@@ -1,0 +1,17 @@
+Change in Build_monitX_cygwinY_setupZ.bat:
+_CYGWIN_ARCHITECTURE
+_CYGWIN_VERSION
+_SETUP_VERSION
+_SITE
+
+Change in C:\CygMonit_Dev\Monits\$MonitVersion\src\buildMonit.sh:
+_MONIT_VERSION
+
+Change in buildSetup.iss:
+MyAppVersion
+CgywinVersion
+CgywinArchitecture
+
+Donwload new monit verion (.tar.gz) to  C:\CygMonit_Dev\Monits\$MonitVersion\src\
+
+Patch everyting in buildMonit.sh from C:\CygMonit_Dev\Monits\$MonitVersion\src\ till compile
