@@ -9,6 +9,10 @@ You will also have a cygiwn bash environement ready shortcut.
 
 To **install** CygMonit download from **InnoSetups folder** your preferred monit version. 
 
+[![Download](https://custom-icon-badges.demolab.com/badge/-Download-blue?style=for-the-badge&logo=download&logoColor=white "Download zip")](https://github.com/DenverCoder1/readme-download-button-action/archive/1.0.2.zip)
+
+[![Download CygMonit_5.25.1_Setup-x64.exe]](https://github.com/kfeina/CygMonit/tree/main/InnoSetups/CygMonit_5.25.1_Setup-x64.exe)
+
 [Download CygMonit_5.25.1_Setup-x64.exe](https://github.com/kfeina/CygMonit/tree/main/InnoSetups/CygMonit_5.25.1_Setup-x64.exe)
 [CygMonit_5.25.1_Setup-x86.exe](https://github.com/kfeina/CygMonit/tree/main/InnoSetups/CygMonit_5.25.1_Setup-x86.exe)
 [CygMonit_5.14_Setup-x86.exe](https://github.com/kfeina/CygMonit/tree/main/InnoSetups/CygMonit_5.14_Setup-x86.exe)
