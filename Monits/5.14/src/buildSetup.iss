@@ -3,7 +3,7 @@
 
 #define MyAppName "CygMonit"
 #define MyAppVersion "5.14"
-#define MyAppURL "https://github.com/kfeina"
+#define MyAppURL "https://github.com/kfeina/Cygmonit"
 
 #define CgywinVersion "2.6.0.1"
 #define CgywinArchitecture "x86"
@@ -12,12 +12,12 @@
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
-AppId={{260E52AA-CE7E-43CD-B211-37F3B38F278D}
+AppId={{3C118040-C020-497A-9473-197824CEEE8C}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 AppPublisherURL={#MyAppURL}
 
-DefaultDirName={autopf}\{#MyAppName}
+DefaultDirName={autopf}\{#MyAppName}\{#CgywinArchitecture}-{#MyAppVersion}
 DefaultGroupName={#MyAppName}
 DisableDirPage=No
 

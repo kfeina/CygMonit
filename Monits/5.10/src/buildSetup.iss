@@ -3,7 +3,7 @@
 
 #define MyAppName "CygMonit"
 #define MyAppVersion "5.10"
-#define MyAppURL "https://github.com/kfeina"
+#define MyAppURL "https://github.com/kfeina/Cygmonit"
 
 #define CgywinVersion "1.7.35.1"
 #define CgywinArchitecture "x86"
@@ -17,7 +17,7 @@ AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 AppPublisherURL={#MyAppURL}
 
-DefaultDirName={autopf}\{#MyAppName}
+DefaultDirName={autopf}\{#MyAppName}\{#CgywinArchitecture}-{#MyAppVersion}
 DefaultGroupName={#MyAppName}
 DisableDirPage=No
 

@@ -8,9 +8,11 @@ Change in C:\CygMonit_Dev\Monits\$MonitVersion\src\buildMonit.sh:
 _MONIT_VERSION
 
 Change in buildSetup.iss:
-MyAppVersion
+AppVersion
 CgywinVersion
 CgywinArchitecture
+AppGUID (Easier to manage the backup/restore of monit configuration if each InnoSetup  package has its own version = differnt GUID)
+Chcek DefaultDirName={atofpf} or {autopf64}\{#AppName}\{#CgywinArchitecture}-{#AppVersion}, to force autopf64 to x64programs
 
 Donwload new monit verion (.tar.gz) to  C:\CygMonit_Dev\Monits\$MonitVersion\src\
 
