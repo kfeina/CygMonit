@@ -7,14 +7,17 @@ Try it with https://localhost:2812, user: admin, pwd: CygMonit
 
 You will also have a cygiwn bash environement ready shortcut.
 
-To **install** CygMonit download your preferred monit version: 
+To **install** CygMonit download the latest monit version: 
+
+https://github.com/kfeina/CygMonit/releases/download/Monit-5.34.0(x64)-for-Windows/CygMonit_5.34.0_Setup-x64.exe
+
+Older releases: 
 
 https://github.com/kfeina/CygMonit/releases/download/Monit-5.33.0(x64)-for-Windows/CygMonit_5.33.0_Setup-x64.exe
 https://github.com/kfeina/CygMonit/releases/download/Monit-5.25.1(x64)-for-Windows/CygMonit_5.25.1_Setup-x64.exe
 https://github.com/kfeina/CygMonit/releases/download/Monit-5.25.1-for-Windows/CygMonit_5.25.1_Setup-x86.exe
 https://github.com/kfeina/CygMonit/releases/download/Monit-5.14-for-Windows/CygMonit_5.14_Setup-x86.exe
 https://github.com/kfeina/CygMonit/releases/download/Monit-5.10-for-Windows/CygMonit_5.10_Setup-x86.exe
-
 
 
 Developer info:
