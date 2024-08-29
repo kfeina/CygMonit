@@ -9,7 +9,7 @@ You will also have a cygiwn bash environement ready shortcut.
 
 To **install** CygMonit download from **InnoSetups folder** your preferred monit version. 
 
-[CygMonit_5.25.1_Setup-x64.exe](https://github.com/kfeina/CygMonit/tree/main/InnoSetups/CygMonit_5.25.1_Setup-x64.exe)
+[Download CygMonit_5.25.1_Setup-x64.exe](https://github.com/kfeina/CygMonit/tree/main/InnoSetups/CygMonit_5.25.1_Setup-x64.exe)
 [CygMonit_5.25.1_Setup-x86.exe](https://github.com/kfeina/CygMonit/tree/main/InnoSetups/CygMonit_5.25.1_Setup-x86.exe)
 [CygMonit_5.14_Setup-x86.exe](https://github.com/kfeina/CygMonit/tree/main/InnoSetups/CygMonit_5.14_Setup-x86.exe)
 [CygMonit_5.10_Setup-x86.exe](https://github.com/kfeina/CygMonit/tree/main/InnoSetups/CygMonit_5.10_Setup-x86.exe)
