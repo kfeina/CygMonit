@@ -1,0 +1,18 @@
+--- configure.ac.original	2024-08-29 19:41:52.545918200 +0200
++++ configure.ac	2024-08-29 19:41:52.577168700 +0200
+@@ -283,6 +283,15 @@
+    CFLAGS="$CFLAGS -D_THREAD_SAFE -D_REENTRANT"
+    AC_DEFINE([AIX], 1, [Define to 1 if the system is AIX])
+    LIBS="$LIBS -lcfg -lodm -lperfstat"
++
++##### TO CREATE THE DIFF FILE: diff -Naru configure.ac.original configure.ac > libmonit_configure.ac.patch 
++###### CYGWIN ADDED LINES START #####
++elif test "${architecture:0:6}" = "CYGWIN" # example CYGWIN_NT-6.1 -> CYGWIN
++then
++	CFLAGS="$CFLAGS -D _REENTRANT"
++	AC_DEFINE([CYGWIN], 1, [Define to 1 if the system is CYGWIN])
++###### CYGWIN ADDED LINES END ######
++
+ else
+    AC_MSG_ERROR([Architecture not supported: ${architecture}])
+ fi

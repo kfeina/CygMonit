@@ -1,0 +1,16 @@
+--- Link.c.original	2024-08-29 20:06:35.078264800 +0200
++++ Link.c	2024-08-29 20:13:41.099018500 +0200
+@@ -167,6 +167,13 @@
+ #include "os/solaris/Link.inc"
+ #elif defined AIX
+ #include "os/aix/Link.inc"
++
++// TO CREATE THE DIFF FILE: diff -Naru Link.c.original Link.c > Link.c.patch 
++// CYGWIN ADDED LINES START #####
++#elif defined CYGWIN
++#include "os/cygwin/Link.inc"
++// CYGWIN ADDED LINES END ######
++
+ #endif
+ 
+ 

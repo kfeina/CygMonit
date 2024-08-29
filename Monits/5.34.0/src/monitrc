@@ -1,0 +1,62 @@
+###############################################################################
+## Global section
+###############################################################################
+set init        #We use monit as a service (foreground program launched by a background program cygrunsrv)
+
+set daemon 60 with start delay 15 
+
+set logfile /var/log/monit.log
+set mailserver mailserver.mydomain.com
+
+set eventqueue  basedir /tmp/monitqueue slots 500
+
+set alert myemail@mydomain.com with reminder on 2880 cycles #12 hours
+set mail-format {
+   from: CygMonit@$HOST
+   subject: CygMonit alert --  $EVENT $SERVICE
+   message: $EVENT Service $SERVICE
+                 Date:        $DATE
+                 Action:      $ACTION
+                 Host:        $HOST
+                 Description: $DESCRIPTION
+            Your CygMonit employee,
+}
+
+set httpd port 2812 and    
+    allow localhost        # allow localhost to connect to the server and
+	allow 0.0.0.0/0		   # allow every network	
+	allow admin:CygMonit   # require user 'admin' with password 'monit'
+	
+
+###############################################################################
+## Services
+###############################################################################
+
+############################################### SYSTEM
+check system $HOST
+	if memory usage > 75% then alert
+    if swap usage > 25% for 10 cycles then alert
+    if cpu usage (user) > 75% then alert
+    if cpu usage (system) > 25% then alert
+    if cpu usage (wait) > 10% then alert
+
+#Cygwin Notes -> LoadAVG doesn't work on cygwin.
+
+############################################### FILE
+check file checkFileSize_monit.log with path /var/log/monit.log
+    if size > 250 MB then exec "/usr/local/bin/CygMonit/monitReload.sh"
+
+############################################### FILESYSTEM
+check filesystem checkDrive_C with path /cygdrive/c
+	if space usage > 75% then alert
+
+############################################### PROCESS - matching
+check process checkMatching_Monitd matching monit #cygrunsrv_Monitd
+
+#Cygwin Notes -> pidfile wrapper should be created for the windows processes.
+
+############################################### PROGRAM - checkService
+check program checkService_RDP with path "/usr/local/bin/CygMonit/service.sh query TermService svchost.exe"
+    if status != 0 then exec "/usr/local/bin/CygMonit/service.sh start TermService svchost.exe"
+	group Remote_Services
+

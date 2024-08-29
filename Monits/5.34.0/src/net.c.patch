@@ -1,0 +1,80 @@
+--- net.c.original	2024-08-29 20:06:35.015765900 +0200
++++ net.c	2024-08-29 20:11:11.553277800 +0200
+@@ -296,7 +296,15 @@
+         return -1;
+ }
+ 
+-
++// TO CREATE THE DIFF FILE: diff -Naru net.c.original net.c > net.c.patch 
++// CYGWIN ADDED LINES START #####
++ 
++#ifdef CYGWIN
++static void _setPingOptions(int socket, struct addrinfo *addr) {
++	return -1;
++}
++#else	
++// CYGWIN ADDED LINES END ######
+ static void _setPingOptions(int socket, struct addrinfo *addr) {
+ #ifdef HAVE_IPV6
+         struct icmp6_filter filter;
+@@ -323,8 +331,17 @@
+                         break;
+         }
+ }
++#endif
+ 
+-
++// TO CREATE THE DIFF FILE: diff -Naru net.c.original net.c > net.c.patch 
++// CYGWIN ADDED LINES START #####
++ 
++#ifdef CYGWIN
++static bool _sendPing(const char *hostname, int socket, struct addrinfo *addr, int size, int retry, int maxretries, int id, long long started) {
++	return -1;
++}
++#else	
++// CYGWIN ADDED LINES END ######
+ static bool _sendPing(const char *hostname, int socket, struct addrinfo *addr, int size, int retry, int maxretries, int id, long long started) {
+         char buf[ICMP_MAXSIZE] = {};
+         int header_len = 0;
+@@ -379,7 +396,17 @@
+         }
+         return true;
+ }
++#endif
+ 
++// TO CREATE THE DIFF FILE: diff -Naru net.c.original net.c > net.c.patch 
++// CYGWIN ADDED LINES START #####
++ 
++#ifdef CYGWIN
++static double _receivePing(const char *hostname, int socket, struct addrinfo *addr, int retry, int maxretries, int out_id, long long started, int timeout) {
++	return -1;
++}
++#else	
++// CYGWIN ADDED LINES END ######
+ 
+ static double _receivePing(const char *hostname, int socket, struct addrinfo *addr, int retry, int maxretries, int out_id, long long started, int timeout) {
+         int in_len = 0, read_timeout = timeout;
+@@ -463,7 +490,17 @@
+         _log_warningOrError(retry, maxretries, "Ping response for %s %d/%d timed out -- no response within %s\n", hostname, retry, maxretries, Fmt_time2str(timeout, (char[11]){}));
+         return -1.;
+ }
++#endif
+ 
++// TO CREATE THE DIFF FILE: diff -Naru net.c.original net.c > net.c.patch 
++// CYGWIN ADDED LINES START #####
++ 
++#ifdef CYGWIN
++double icmp_echo(const char *hostname, Socket_Family family, Outgoing_T *outgoing, int size, int timeout, int maxretries) {
++	return -1;
++}
++#else	
++// CYGWIN ADDED LINES END ######
+ 
+ double icmp_echo(const char *hostname, Socket_Family family, Outgoing_T *outgoing, int size, int timeout, int maxretries) {
+         assert(hostname);
+@@ -541,4 +578,4 @@
+         freeaddrinfo(result);
+         return response;
+ }
+-
++#endif
