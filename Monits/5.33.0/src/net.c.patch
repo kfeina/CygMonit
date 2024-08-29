@@ -1,0 +1,77 @@
+--- net.c.original	2023-02-11 11:28:19.000000000 +0100
++++ net.c	2024-08-29 15:33:03.984472500 +0200
+@@ -296,6 +296,15 @@
+         return -1;
+ }
+ 
++// TO CREATE THE DIFF FILE: diff -Naru net.c.original net.c > net.c.patch 
++// CYGWIN ADDED LINES START #####
++ 
++#ifdef CYGWIN
++static void _setPingOptions(int socket, struct addrinfo *addr) {
++	return -1;
++}
++#else	
++// CYGWIN ADDED LINES END ######
+ 
+ static void _setPingOptions(int socket, struct addrinfo *addr) {
+ #ifdef HAVE_IPV6
+@@ -324,6 +333,17 @@
+         }
+ }
+ 
++#endif
++
++// TO CREATE THE DIFF FILE: diff -Naru net.c.original net.c > net.c.patch 
++// CYGWIN ADDED LINES START #####
++ 
++#ifdef CYGWIN
++static bool _sendPing(const char *hostname, int socket, struct addrinfo *addr, int size, int retry, int maxretries, int id, long long started) {
++	return -1;
++}
++#else	
++// CYGWIN ADDED LINES END ######
+ 
+ static bool _sendPing(const char *hostname, int socket, struct addrinfo *addr, int size, int retry, int maxretries, int id, long long started) {
+         char buf[ICMP_MAXSIZE] = {};
+@@ -380,6 +400,17 @@
+         return true;
+ }
+ 
++#endif
++
++// TO CREATE THE DIFF FILE: diff -Naru net.c.original net.c > net.c.patch 
++// CYGWIN ADDED LINES START #####
++ 
++#ifdef CYGWIN
++static double _receivePing(const char *hostname, int socket, struct addrinfo *addr, int retry, int maxretries, int out_id, long long started, int timeout) {
++	return -1;
++}
++#else	
++// CYGWIN ADDED LINES END ######
+ 
+ static double _receivePing(const char *hostname, int socket, struct addrinfo *addr, int retry, int maxretries, int out_id, long long started, int timeout) {
+         int in_len = 0, read_timeout = timeout;
+@@ -464,6 +495,17 @@
+         return -1.;
+ }
+ 
++#endif
++
++// TO CREATE THE DIFF FILE: diff -Naru net.c.original net.c > net.c.patch 
++// CYGWIN ADDED LINES START #####
++ 
++#ifdef CYGWIN
++double icmp_echo(const char *hostname, Socket_Family family, Outgoing_T *outgoing, int size, int timeout, int maxretries) {
++	return -1;
++}
++#else	
++// CYGWIN ADDED LINES END ######
+ 
+ double icmp_echo(const char *hostname, Socket_Family family, Outgoing_T *outgoing, int size, int timeout, int maxretries) {
+         ASSERT(hostname);
+@@ -542,3 +584,4 @@
+         return response;
+ }
+ 
++#endif

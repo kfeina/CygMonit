@@ -1,0 +1,20 @@
+--- configure.ac.original	2024-08-29 14:35:48.088710500 +0200
++++ configure.ac	2024-08-29 14:37:32.092122200 +0200
+@@ -581,6 +581,17 @@
+    CFLAGS=`echo $CFLAGS|sed 's/-g//g'`
+    CFLAGS="$CFLAGS -D_THREAD_SAFE -D_REENTRANT"
+    LIBS="$LIBS -lodm -lperfstat -lm"
++
++##### TO CREATE THE DIFF FILE: diff -Naru configure.ac.original configure.ac > monit_configure.ac.patch 
++###### CYGWIN ADDED LINES START #####
++elif test "${architecture:0:6}" = "CYGWIN" # CYGWIN_NT-6.1 -> CYGWIN
++then
++	ARCH="CYGWIN"
++	CFLAGS="$CFLAGS -D _REENTRANT -Uunix"
++	LDFLAGS="$LDFLAGS -rdynamic"
++	AC_DEFINE([HAVE_CPU_WAIT], [1], [Define to 1 if CPU wait information is available.])	
++###### CYGWIN ADDED LINES END ######
++
+ else
+    AC_MSG_WARN([Architecture not supported: ${architecture}])
+    CFLAGS="$CFLAGS -D _REENTRANT"
