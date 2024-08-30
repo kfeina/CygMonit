@@ -10,20 +10,26 @@ Find the latest release here:
 
 **Download and install** 
 
-![license](./png/license.png "Accept License")
-![folder](./png/folder.png "folder")
-![menu](./png/menu.png "Menu")
-![shortcut](./png/shortcut.png "xxx")
-![install](./png/install.png "fff")
-![finish](./png/finish.png "folder")
-![service](./png/service.png "folder")
-![localhost](./png/localhost.png "ttt")
+![license](./png/license.png "Accept License") \
+![folder](./png/folder.png "Install Folder") \
+![menu](./png/menu.png "Menu Folder") \
+![shortcut](./png/shortcut.png "Create desktop shortcut") \
+![install](./png/install.png "Install") \
+![finish](./png/finish.png "Finish") \
+
+Acces monit through the broswer. 
+
+https//localhost:2812
+user: admin
+password: CygMonit
+
+![localhost](./png/localhost.png "Browser Access") \
 
 
+Monit is working an new service called **CygMonitSvc** has been created: 
+![service](./png/service.png "CygMonit Service") \
 
-A new service called **CygMonitSvc** will be created. Monit will run as a service in your windows platform
 
-Download 
 
 
 
@@ -48,15 +54,11 @@ To **install** CygMonit download the latest monit version:
 
 Older releases: 
 
-[CygMonit 5.33 (x64)](https://github.com/kfeina/CygMonit/releases/download/Monit-5.33.0(x64)-for-Windows/CygMonit_5.33.0_Setup-x64.exe)
-
-[CygMonit 5.25.1 (x64)](https://github.com/kfeina/CygMonit/releases/download/Monit-5.25.1(x64)-for-Windows/CygMonit_5.25.1_Setup-x64.exe)
-
-[CygMonit 5.25.1 (x86)](https://github.com/kfeina/CygMonit/releases/download/Monit-5.25.1-for-Windows/CygMonit_5.25.1_Setup-x86.exe)
-
-[CygMonit 5.14 (x86)](https://github.com/kfeina/CygMonit/releases/download/Monit-5.14-for-Windows/CygMonit_5.14_Setup-x86.exe)
-
-[CygMonit 5.10 (x86)](https://github.com/kfeina/CygMonit/releases/download/Monit-5.10-for-Windows/CygMonit_5.10_Setup-x86.exe)
+[CygMonit 5.33 (x64)](https://github.com/kfeina/CygMonit/releases/download/Monit-5.33.0(x64)-for-Windows/CygMonit_5.33.0_Setup-x64.exe)\
+[CygMonit 5.25.1 (x64)](https://github.com/kfeina/CygMonit/releases/download/Monit-5.25.1(x64)-for-Windows/CygMonit_5.25.1_Setup-x64.exe)\
+[CygMonit 5.25.1 (x86)](https://github.com/kfeina/CygMonit/releases/download/Monit-5.25.1-for-Windows/CygMonit_5.25.1_Setup-x86.exe)\
+[CygMonit 5.14 (x86)](https://github.com/kfeina/CygMonit/releases/download/Monit-5.14-for-Windows/CygMonit_5.14_Setup-x86.exe)\
+[CygMonit 5.10 (x86)](https://github.com/kfeina/CygMonit/releases/download/Monit-5.10-for-Windows/CygMonit_5.10_Setup-x86.exe)\
 
 
 Developer info:
