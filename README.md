@@ -23,26 +23,28 @@ Acces monit through the broswer.
 user: admin
 password: CygMonit
 
-![localhost](./png/localhost.png "Browser Access")\
+![localhost](./png/localhost.png "Browser Access")
 
 
 Check Monit is installed and that a new service **CygMonitSvc** is created
  
-![service](./png/service.png "CygMonit Service")\
+![service](./png/service.png "CygMonit Service")
 
 
 **Configuration** 
 
 The fastest way to configure CygMonit is to use a unix compatible editor like Notepad++ (or the included VI). 
 
-As Cygmonit is executed as LocalSystem, you won't have permissions to modify the main /etc/monitrc file. 
+As Cygmonit is executed as **LocalSystem**, you won't have permissions to modify the main /etc/monitrc file. 
 
 First you will have to execute the following:
 
 Start the CygMonit bash application. 
 
-![start](./png/finish.png "CygMonit bash")\
+![start](./png/start.png "CygMonit bash")\
 
+
+Execute:
 chown Administrator /usr/local/bin/monit.exe
 chown Administrator /etc/monitrc
 
@@ -54,47 +56,11 @@ Once finished, before starting **CygMonitSvc** remember to undo your changes:
 chown SYSTEM /usr/local/bin/monit.exe
 chown SYSTEM /etc/monitrc
 
-Start the service 
+Start the service manually with: 
 /bin/cygrunsrv --start CygMonitSvc
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-It comes with two feautures: 
-
-
-CygMonit includes an installable setup.exe package. 
-
-
-
-This project compiles Monit with Cygwin, and wraps everything with an installable setup.exe package (created with InnoSetup) plus an automated **Monit Service** installer. 
-
-Once installed, a new service called **CygMonitSvc** will be created and monit will run as a service in your windows platform. 
-Try it with https://localhost:2812, user: admin, pwd: CygMonit
-
-You will also have a cygiwn bash environement ready shortcut.
-
-To **install** CygMonit download the latest monit version: 
-
-[Latest Version - CygMonit 5.34 (x64)](https://github.com/kfeina/CygMonit/releases/download/Monit-5.34.0(x64)-for-Windows/CygMonit_5.34.0_Setup-x64.exe)
-
-Older releases: 
+**Older releases**
 
 [CygMonit 5.33 (x64)](https://github.com/kfeina/CygMonit/releases/download/Monit-5.33.0(x64)-for-Windows/CygMonit_5.33.0_Setup-x64.exe)\
 [CygMonit 5.25.1 (x64)](https://github.com/kfeina/CygMonit/releases/download/Monit-5.25.1(x64)-for-Windows/CygMonit_5.25.1_Setup-x64.exe)\
@@ -103,13 +69,12 @@ Older releases:
 [CygMonit 5.10 (x86)](https://github.com/kfeina/CygMonit/releases/download/Monit-5.10-for-Windows/CygMonit_5.10_Setup-x86.exe)\
 
 
-Developer info:
+**Developer info**
 To create de development environments, I followed the latest cygwin.dll branch version by the latest setup version, where criteria is found in: 
 http://ctm.crouchingtigerhiddenfruitbat.org/pub/cygwin/circa/
 
 
-
-Older releases: 
+**Older releases**
 [CygMonit 5.33 (x64)](https://github.com/kfeina/CygMonit/releases/download/Monit-5.33.0(x64)-for-Windows/CygMonit_5.33.0_Setup-x64.exe)
 
 [CygMonit 5.25.1 (x64)](https://github.com/kfeina/CygMonit/releases/download/Monit-5.25.1(x64)-for-Windows/CygMonit_5.25.1_Setup-x64.exe)
