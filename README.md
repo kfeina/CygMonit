@@ -69,7 +69,7 @@ Start the service manually with:
 [CygMonit 5.25.1 (x64)](https://github.com/kfeina/CygMonit/releases/download/Monit-5.25.1(x64)-for-Windows/CygMonit_5.25.1_Setup-x64.exe)\
 [CygMonit 5.25.1 (x86)](https://github.com/kfeina/CygMonit/releases/download/Monit-5.25.1-for-Windows/CygMonit_5.25.1_Setup-x86.exe)\
 [CygMonit 5.14 (x86)](https://github.com/kfeina/CygMonit/releases/download/Monit-5.14-for-Windows/CygMonit_5.14_Setup-x86.exe)\
-[CygMonit 5.10 (x86)](https://github.com/kfeina/CygMonit/releases/download/Monit-5.10-for-Windows/CygMonit_5.10_Setup-x86.exe)\
+[CygMonit 5.10 (x86)](https://github.com/kfeina/CygMonit/releases/download/Monit-5.10-for-Windows/CygMonit_5.10_Setup-x86.exe)
 
 
 **Developer info**
