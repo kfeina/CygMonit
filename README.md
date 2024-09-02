@@ -1,6 +1,6 @@
 # CygMonit - Monit for Windows
 
-CygMonit is a port of monit for Windows. Ready to use, as it comes with an installer. 
+** CygMonit is a port of monit for Windows.**
 
 Find the latest release here:
 
@@ -15,19 +15,61 @@ Find the latest release here:
 ![menu](./png/menu.png "Menu Folder") \
 ![shortcut](./png/shortcut.png "Create desktop shortcut") \
 ![install](./png/install.png "Install") \
-![finish](./png/finish.png "Finish") \
+![finish](./png/finish.png "Finish")
 
 Acces monit through the broswer. 
 
-https//localhost:2812
+**http//localhost:2812**
 user: admin
 password: CygMonit
 
-![localhost](./png/localhost.png "Browser Access") \
+![localhost](./png/localhost.png "Browser Access")\
 
 
-Monit is working an new service called **CygMonitSvc** has been created: 
-![service](./png/service.png "CygMonit Service") \
+Check Monit is installed and that a new service **CygMonitSvc** is created
+ 
+![service](./png/service.png "CygMonit Service")\
+
+
+**Configuration** 
+
+The fastest way to configure CygMonit is to use a unix compatible editor like Notepad++ (or the included VI). 
+
+As Cygmonit is executed as LocalSystem, you won't have permissions to modify the main /etc/monitrc file. 
+
+First you will have to execute the following:
+
+Start the CygMonit bash application. 
+
+![start](./png/finish.png "CygMonit bash")\
+
+chown Administrator /usr/local/bin/monit.exe
+chown Administrator /etc/monitrc
+
+Now you can edit /etc/monitrc with Notepad++ and configure it as you need. 
+For example add your M/Monit instance (set mmonit https://monit:monit@192.168.1.10:8443/collector)
+
+Once finished, before starting **CygMonitSvc** remember to undo your changes:
+
+chown SYSTEM /usr/local/bin/monit.exe
+chown SYSTEM /etc/monitrc
+
+Start the service 
+/bin/cygrunsrv --start CygMonitSvc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
