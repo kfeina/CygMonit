@@ -46,7 +46,15 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; 
 
 [Files]
-Source: "..\..\..\PRODUCTION\{#CgywinArchitecture}-{#CgywinVersion}\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+; Note: I add Attribs: System for every file (*). Why? Cause Cygwin creates link files in many files that Inno loses at compile time. 
+; for example: ls -la /etc/crypto-policies/back-ends/openssl.config
+; lrwxrwxrwx 1 Administrators None 46 Aug 29 12:44 /etc/crypto-policies/back-ends/openssl.config -> /usr/share/crypto-policies/DEFAULT/openssl.txt
+; Not having these attributes result in errors like: openssl ciphers
+; 2147483656:error:0E079065:configuration file routines:def_load_bio:missing equal sign:crypto/conf/conf_def.c:407:line 40
+; 2147483656:error:140E6118:SSL routines:ssl_cipher_process_rulestr:invalid command:ssl/ssl_ciph.c:1030:
+; 2147483656:error:140A90A1:SSL routines:SSL_CTX_new:library has no ciphers:ssl/ssl_lib.c:3091:
+; I know this is a brute force solve problem but for now couldn't find easier one. 
+Source: "..\..\..\PRODUCTION\{#CgywinArchitecture}-{#CgywinVersion}\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs; Attribs: System	
 Source: "installMonitService.bat"; DestDir: "{app}\Setup"; Flags: ignoreversion
 Source: "removeMonitService.bat"; DestDir: "{app}\Setup"; Flags: ignoreversion
 
@@ -62,4 +70,3 @@ Filename: "{app}\Setup\installMonitService.bat";  Flags: runascurrentuser shelle
 [UninstallRun]
 Filename: "{sys}\sc.exe"; Parameters: "stop CygMonitSvc"; Flags: runhidden
 Filename: "{app}\Setup\removeMonitService.bat";  Flags: runhidden
-

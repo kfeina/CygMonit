@@ -67,6 +67,11 @@ Start the service manually with:
 
 `/bin/cygrunsrv --start CygMonitSvc`
 
+Find log information of the service in: 
+
+/var/log/CygMonitSvc.log
+
+
 
 **Older releases**
 
