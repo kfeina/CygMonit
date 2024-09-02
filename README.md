@@ -46,7 +46,7 @@ Start the CygMonit bash application.
 
 Execute:
 
-`chown Administrator /usr/local/bin/monit.exe`
+`chown Administrator /usr/local/bin/monit.exe`\
 `chown Administrator /etc/monitrc`
 
 Now you can edit /etc/monitrc with Notepad++ and configure it as you need. 
@@ -55,7 +55,7 @@ For example add your M/Monit instance (set mmonit https://monit:monit@192.168.1.
 
 Once finished, before starting **CygMonitSvc** remember to undo your changes:
 
-`chown SYSTEM /usr/local/bin/monit.exe`
+`chown SYSTEM /usr/local/bin/monit.exe`\
 `chown SYSTEM /etc/monitrc`
 
 Start the service manually with: 
@@ -73,6 +73,7 @@ Start the service manually with:
 
 
 **Developer info**
-To create de development environments, I followed the latest cygwin.dll branch version by the latest setup version, where criteria is found in: 
+
+To create de development environments, I followed the latest cygwin.dll branch version by the latest setup version, which criteria is found in: 
 http://ctm.crouchingtigerhiddenfruitbat.org/pub/cygwin/circa/
 
