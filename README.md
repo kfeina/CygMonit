@@ -33,7 +33,7 @@ Check Monit is installed and that a new service **CygMonitSvc** is created
 
 **Configuration** 
 
-The fastest way to configure CygMonit is to use a unix compatible editor like Notepad++ (or the included VI). 
+The fastest way to configure CygMonit is to use a unix compatible editor like **Notepad++** (or the included VI). 
 
 As Cygmonit is executed as **LocalSystem**, you won't have permissions to modify the main /etc/monitrc file. 
 
@@ -45,19 +45,22 @@ Start the CygMonit bash application.
 
 
 Execute:
-chown Administrator /usr/local/bin/monit.exe
-chown Administrator /etc/monitrc
+
+`chown Administrator /usr/local/bin/monit.exe`
+`chown Administrator /etc/monitrc`
 
 Now you can edit /etc/monitrc with Notepad++ and configure it as you need. 
+
 For example add your M/Monit instance (set mmonit https://monit:monit@192.168.1.10:8443/collector)
 
 Once finished, before starting **CygMonitSvc** remember to undo your changes:
 
-chown SYSTEM /usr/local/bin/monit.exe
-chown SYSTEM /etc/monitrc
+`chown SYSTEM /usr/local/bin/monit.exe`
+`chown SYSTEM /etc/monitrc`
 
 Start the service manually with: 
-/bin/cygrunsrv --start CygMonitSvc
+
+`/bin/cygrunsrv --start CygMonitSvc`
 
 
 **Older releases**
