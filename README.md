@@ -73,14 +73,3 @@ Start the service manually with:
 To create de development environments, I followed the latest cygwin.dll branch version by the latest setup version, where criteria is found in: 
 http://ctm.crouchingtigerhiddenfruitbat.org/pub/cygwin/circa/
 
-
-**Older releases**
-[CygMonit 5.33 (x64)](https://github.com/kfeina/CygMonit/releases/download/Monit-5.33.0(x64)-for-Windows/CygMonit_5.33.0_Setup-x64.exe)
-
-[CygMonit 5.25.1 (x64)](https://github.com/kfeina/CygMonit/releases/download/Monit-5.25.1(x64)-for-Windows/CygMonit_5.25.1_Setup-x64.exe)
-
-[CygMonit 5.25.1 (x86)](https://github.com/kfeina/CygMonit/releases/download/Monit-5.25.1-for-Windows/CygMonit_5.25.1_Setup-x86.exe)
-
-[CygMonit 5.14 (x86)](https://github.com/kfeina/CygMonit/releases/download/Monit-5.14-for-Windows/CygMonit_5.14_Setup-x86.exe)
-
-[CygMonit 5.10 (x86)](https://github.com/kfeina/CygMonit/releases/download/Monit-5.10-for-Windows/CygMonit_5.10_Setup-x86.exe)
