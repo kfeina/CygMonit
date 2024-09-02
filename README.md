@@ -45,6 +45,7 @@ Start the CygMonit bash application.
 
 
 Stop the service manually with: 
+
 `/bin/cygrunsrv --stop CygMonitSvc`
 
 
