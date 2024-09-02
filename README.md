@@ -44,6 +44,10 @@ Start the CygMonit bash application.
 ![start](./png/start.png "CygMonit bash")\
 
 
+Stop the service manually with: 
+`/bin/cygrunsrv --stop CygMonitSvc`
+
+
 Execute:
 
 `chown Administrator /usr/local/bin/monit.exe`\
