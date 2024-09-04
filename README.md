@@ -39,7 +39,7 @@ Check Monit is installed and that a new service **CygMonitSvc** is created
 
 **Configuration** 
 
-The fastest way to configure CygMonit is to start CygMonit bash and use vim. Edit any monit file you need, as no problem permissions arise. The restart the service:
+The fastest way to configure CygMonit is to start CygMonit bash and use vim. Edit any monit file you need, as no problem permissions arise. Then restart the service:
 
 `/bin/cygrunsrv --stop CygMonitSvc`\
 `/bin/cygrunsrv --start CygMonitSvc`
