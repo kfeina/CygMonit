@@ -45,7 +45,7 @@ REM #Main:
 	set "_ENVIRONMENT=DEVELOPMENT"
 	set "_ROOTDIR_DEV=%_PROJECT_FOLDER%\%_ENVIRONMENT%\%_CYGWIN_ARCHITECTURE%-%_CYGWIN_VERSION%"
 
-	set "_PACKAGES=autoconf,diff,diffutils,patch,xz,automake,make,gcc-core,m4,bison,libtool,flex,openssl-devel,cygwin-devel,libcrypt-devel"
+	set "_PACKAGES=autoconf,diff,diffutils,patch,xz,automake,make,gcc-core,m4,bison,libtool,flex,openssl-devel,cygwin-devel,libcrypt-devel,git"
 
 	call :fInstallCygwin %_ROOTDIR_DEV%	
 	call :fSetup %_ROOTDIR_DEV%
@@ -66,7 +66,7 @@ REM #Main:
 	set "_ENVIRONMENT=PRODUCTION"
 	set "_ROOTDIR_PRO=%_PROJECT_FOLDER%\%_ENVIRONMENT%\%_CYGWIN_ARCHITECTURE%-%_CYGWIN_VERSION%"
 	
-	set "_PACKAGES=crypt,cygrunsrv"	
+	set "_PACKAGES=crypt,cygrunsrv,procps,vim,git,openssh,cron"	
 
 	call :fInstallCygwin %_ROOTDIR_PRO%
 	call :fSetup %_ROOTDIR_PRO%
@@ -119,7 +119,7 @@ REM #FUCNTIONS:
 	if "%~1" == "" goto :fparamRequired
 	
 	set "_ROOTDIR=%~1"	
-	set "_COMMAND=%_SETUP_EXE% --verbose --quiet-mode --allow-unsupported-windows --no-verify --no-shortcuts --site %_SITE% --only-site --root "%_ROOTDIR%" --local-package-dir "%_LOCALPACKAGEDIR%" --packages %_PACKAGES%"
+	set "_COMMAND=%_SETUP_EXE% --verbose --no-write-registry --quiet-mode --allow-unsupported-windows --no-verify --no-shortcuts --site %_SITE% --only-site --root "%_ROOTDIR%" --local-package-dir "%_LOCALPACKAGEDIR%" --packages %_PACKAGES%"
 	
 	%_COMMAND%	
 	

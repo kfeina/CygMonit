@@ -46,7 +46,7 @@ REM #Main:
 	set "_ENVIRONMENT=DEVELOPMENT"
 	set "_ROOTDIR_DEV=%_PROJECT_FOLDER%\%_ENVIRONMENT%\%_CYGWIN_ARCHITECTURE%-%_CYGWIN_VERSION%"
 
-	set "_PACKAGES=autoconf,diff,diffutils,patch,xz,automake,make,gcc-core,m4,bison,libtool,flex,openssl-devel,cygwin-devel,libcrypt-devel,zlib-devel"
+	set "_PACKAGES=autoconf,diff,diffutils,patch,xz,automake,make,gcc-core,m4,bison,libtool,flex,openssl-devel,cygwin-devel,libcrypt-devel,zlib-devel,git"
 	
 	call :fInstallCygwin %_ROOTDIR_DEV%	
 	call :fSetup %_ROOTDIR_DEV%
@@ -59,6 +59,16 @@ REM #Main:
 	REM Note: bash --login makes mYPWD /home/Administrator instead of cygwin windows path /cygdrive/c/CygMonit_Dev/
 	%_ROOTDIR_DEV%\bin\bash -l -c "/tmp/buildMonit.sh"																																					
 																																		
+	goto :buildMonitCertificate
+	
+:buildMonitCertificate
+	copy /Y %_PROJECT_FOLDER%\Monits\%_MONIT_VERSION%\src\monitCertificate.cnf  %_ROOTDIR_DEV%\tmp\monitCertificate.cnf 		
+	copy /Y %_PROJECT_FOLDER%\Monits\%_MONIT_VERSION%\src\buildMonitCertificate.sh  %_ROOTDIR_DEV%\tmp\buildMonitCertificate.sh		
+
+	%_ROOTDIR_DEV%\bin\bash -l -c "/tmp/buildMonitCertificate.sh"	
+
+	copy /Y %_ROOTDIR_DEV%\tmp\monit.pem  %_PROJECT_FOLDER%\Monits\%_MONIT_VERSION%\exe\monit.pem
+
 	goto :production
 
 :production
@@ -67,7 +77,7 @@ REM #Main:
 	set "_ENVIRONMENT=PRODUCTION"
 	set "_ROOTDIR_PRO=%_PROJECT_FOLDER%\%_ENVIRONMENT%\%_CYGWIN_ARCHITECTURE%-%_CYGWIN_VERSION%"
 	
-	set "_PACKAGES=crypt,cygrunsrv,libcrypt2"	
+	set "_PACKAGES=crypt,cygrunsrv,libcrypt2,procps,vim,git,openssh,cron"	
 
 	call :fInstallCygwin %_ROOTDIR_PRO%
 	call :fSetup %_ROOTDIR_PRO%
@@ -90,6 +100,11 @@ REM #Main:
 	%_ROOTDIR_PRO%\bin\bash -l -c "chown Administrator /etc/monitrc"	
 	%_ROOTDIR_PRO%\bin\bash -l -c "chmod 0700 /usr/local/bin/monit.exe"
 	%_ROOTDIR_PRO%\bin\bash -l -c "chmod 0700 /etc/monitrc"
+	
+	mkdir %_ROOTDIR_PRO%\usr\ssl\certs
+	copy /Y %_PROJECT_FOLDER%\Monits\%_MONIT_VERSION%\exe\monit.pem %_ROOTDIR_PRO%\usr\ssl\certs
+	%_ROOTDIR_PRO%\bin\bash -l -c "chown Administrator /usr/ssl/certs/monit.pem"	
+	%_ROOTDIR_PRO%\bin\bash -l -c "chmod 0700 /usr/ssl/certs/monit.pem"
 	
 	goto :buildService
 		
@@ -120,7 +135,7 @@ REM #FUCNTIONS:
 	if "%~1" == "" goto :fparamRequired
 	
 	set "_ROOTDIR=%~1"	
-	set "_COMMAND=%_SETUP_EXE% --verbose --quiet-mode --allow-unsupported-windows --no-verify --no-shortcuts --site %_SITE% --only-site --root "%_ROOTDIR%" --local-package-dir "%_LOCALPACKAGEDIR%" --packages %_PACKAGES%"
+	set "_COMMAND=%_SETUP_EXE% --verbose --no-write-registry --quiet-mode --allow-unsupported-windows --no-verify --no-shortcuts --site %_SITE% --only-site --root "%_ROOTDIR%" --local-package-dir "%_LOCALPACKAGEDIR%" --packages %_PACKAGES%"
 	%_COMMAND%	
 	
 	exit /b 0

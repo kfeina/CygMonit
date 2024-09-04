@@ -19,9 +19,15 @@ Find the latest release here:
 
 Acces monit through the broswer. 
 
+**https//localhost:2812**
+user: admin
+password: CygMonit
+
+For versions older than 5.25.1 type:
 **http//localhost:2812**
 user: admin
 password: CygMonit
+
 
 ![localhost](./png/localhost.png "Browser Access")
 
@@ -33,11 +39,18 @@ Check Monit is installed and that a new service **CygMonitSvc** is created
 
 **Configuration** 
 
-The fastest way to configure CygMonit is to use a unix compatible editor like **Notepad++** (or the included VI). 
+The fastest way to configure CygMonit is to start CygMonit bash and use vim. Edit any monit file you need, as no problem permissions arise. The restart the service:
+
+`/bin/cygrunsrv --stop CygMonitSvc`\
+`/bin/cygrunsrv --start CygMonitSvc`
+
+
+Ohterwise use a unix compatible editor like **Notepad++** (or the included VIM). 
 
 As Cygmonit is executed as **LocalSystem**, you won't have permissions to modify the main /etc/monitrc file. 
 
 First you will have to execute the following:
+
 
 Start the CygMonit bash application. 
 
@@ -52,7 +65,9 @@ Stop the service manually with:
 Execute:
 
 `chown Administrator /usr/local/bin/monit.exe`\
-`chown Administrator /etc/monitrc`
+`chown Administrator /etc/monitrc`\
+`chown Administrator /usr/ssl/certs/monit.pem`
+
 
 Now you can edit /etc/monitrc with Notepad++ and configure it as you need. 
 
@@ -61,7 +76,8 @@ For example add your M/Monit instance (set mmonit https://monit:monit@192.168.1.
 Once finished, before starting **CygMonitSvc** remember to undo your changes:
 
 `chown SYSTEM /usr/local/bin/monit.exe`\
-`chown SYSTEM /etc/monitrc`
+`chown SYSTEM /etc/monitrc`\
+`chown SYSTEM /usr/ssl/certs/monit.pem`
 
 Start the service manually with: 
 

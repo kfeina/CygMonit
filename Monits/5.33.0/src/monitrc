@@ -22,11 +22,16 @@ set mail-format {
             Your CygMonit employee,
 }
 
+set mmonit https://monit:mmonit@mmonit:8443/collector
+
 set httpd port 2812 and    
     allow localhost        # allow localhost to connect to the server and
 	allow 0.0.0.0/0		   # allow every network	
 	allow admin:CygMonit   # require user 'admin' with password 'monit'
-	
+	with ssl {             # enable SSL/TLS and set path to server certificate
+	pemfile: /usr/ssl/certs/monit.pem
+    selfsigned: allow
+    }
 
 ###############################################################################
 ## Services
@@ -35,10 +40,10 @@ set httpd port 2812 and
 ############################################### SYSTEM
 check system $HOST
 	if memory usage > 75% then alert
-    if swap usage > 25% for 10 cycles then alert
+    if swap usage > 25% then alert
     if cpu usage (user) > 75% then alert
     if cpu usage (system) > 25% then alert
-    if cpu usage (wait) > 10% then alert
+    # if cpu usage (wait) > 10% then alert
 
 #Cygwin Notes -> LoadAVG doesn't work on cygwin.
 

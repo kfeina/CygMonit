@@ -45,7 +45,7 @@ REM #Main:
 	set "_ENVIRONMENT=DEVELOPMENT"
 	set "_ROOTDIR_DEV=%_PROJECT_FOLDER%\%_ENVIRONMENT%\%_CYGWIN_ARCHITECTURE%-%_CYGWIN_VERSION%"
 
-	set "_PACKAGES=autoconf,diff,diffutils,patch,xz,automake,make,gcc-core,m4,bison,libtool,flex,openssl-devel,cygwin-devel,libcrypt-devel"
+	set "_PACKAGES=autoconf,diff,diffutils,patch,xz,automake,make,gcc-core,m4,bison,libtool,flex,openssl-devel,cygwin-devel,libcrypt-devel,git"
 	
 	call :fInstallCygwin %_ROOTDIR_DEV%	
 	call :fSetup %_ROOTDIR_DEV%
@@ -65,7 +65,7 @@ REM #Main:
 	set "_ENVIRONMENT=PRODUCTION"
 	set "_ROOTDIR_PRO=%_PROJECT_FOLDER%\%_ENVIRONMENT%\%_CYGWIN_ARCHITECTURE%-%_CYGWIN_VERSION%"
 	
-	set "_PACKAGES=crypt,cygrunsrv"	
+	set "_PACKAGES=crypt,cygrunsrv,procps,vim,git,openssh,cron"	
 
 	call :fInstallCygwin %_ROOTDIR_PRO%
 	call :fSetup %_ROOTDIR_PRO%

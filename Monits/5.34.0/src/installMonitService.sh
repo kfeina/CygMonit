@@ -18,6 +18,9 @@ set -e #"set -e" in the main script causes any function returning 1 (or exiting 
 /bin/chmod 0700 /usr/local/bin/monit.exe
 /bin/chmod 0700 /etc/monitrc
 
+/bin/chown System /usr/ssl/certs/monit.pem
+/bin/chmod 0700 /usr/ssl/certs/monit.pem
+
 /bin/cygrunsrv -Q CygMonitSvc && /bin/cygrunsrv --remove CygMonitSvc
-/bin/cygrunsrv --install CygMonitSvc --path /bin/bash.exe --args '--login -c /usr/local/bin/monit.exe -v' --interactive --nohide --desc "Cygwin Monit Service Daemon" 
+/bin/cygrunsrv --install CygMonitSvc --path /bin/bash.exe --args '--login -c /usr/local/bin/monit.exe -v' --nohide --desc "Cygwin Monit Service Daemon" 
 /bin/cygrunsrv --start CygMonitSvc
