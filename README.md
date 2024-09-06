@@ -83,10 +83,18 @@ Start the service manually with:
 
 `/bin/cygrunsrv --start CygMonitSvc`
 
-Find log information of the service in: 
+Find log information of the service at: 
+`/var/log/CygMonitSvc.log`
 
-/var/log/CygMonitSvc.log
 
+**Unattended deployment / silent setup?** 
+
+Create a bat file with content similar to: 
+
+For silent install: C:\CygMonit_Dev\InnoSetups\\CygMonit_5.33_Setup-x64.exe" /verysilent /norestart /suppressmsgboxes /log=C:\Windows\Temp\Setup_Install_CygMonit_5.33.log
+For silent uninstall: C:\Program Files\CygMonit\x64-5.33.0\unins000.exe /verysilent /norestart /suppressmsgboxes /log=C:\Windows\Temp\Setup_UnInstall_CygMonit_5.33.log
+
+Adapt these bat files to your requirements. 
 
 
 **Older releases**

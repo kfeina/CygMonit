@@ -65,7 +65,7 @@ REM #Main:
 	set "_ENVIRONMENT=PRODUCTION"
 	set "_ROOTDIR_PRO=%_PROJECT_FOLDER%\%_ENVIRONMENT%\%_CYGWIN_ARCHITECTURE%-%_CYGWIN_VERSION%"
 	
-	set "_PACKAGES=crypt,cygrunsrv,procps,vim,git,openssh,cron"	
+	set "_PACKAGES=crypt,cygrunsrv,procps,vim,git,openssh,cron,curl,dos2unix,diffutils,p7zip,screen,unzip,zip,chere"	
 
 	call :fInstallCygwin %_ROOTDIR_PRO%
 	call :fSetup %_ROOTDIR_PRO%
