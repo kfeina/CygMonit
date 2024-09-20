@@ -117,11 +117,11 @@ For better performance and issue solving, add the install path folder "C:\Progra
 
 **Developer info**
 
-CygMonit 5.34 (x64) compiled with Cygwin 3.5.4.1 - Runs on x64 Windows 8.1 / 10 / 11 - Windows Server 2012 R2 / 2016 / 2019 / 2022 - and (hopefully) all upcoming releases of Windows.\
-CygMonit 5.33 (x64) compiled with Cygwin 3.4.10.1 - Runs on x64 Windows 7, Windows 8, Windows Server 2008 R2 and Windows Server 2012\
-CygMonit 5.25.1 (x64)/(x86) compiled with Cygwin 3.3.6.1 - Runs on x86/x64 Windows Vista, Windows Server 2008\
-CygMonit 5.14 (x86) compiled with Cygwin 2.6.0.1 - Runs on Windows XP and Windows Server 2003/2003 R2\
-CygMonit 5.10 (x86) compiled with Cygwin 1.7.35.1 - Runs on Windows 2000 and Windows XP pre-SP3\
+CygMonit 5.34 (x64): runs on x64 Windows 8.1 / 10 / 11 - Windows Server 2012 R2 / 2016 / 2019 / 2022 - and (hopefully) all upcoming releases of Windows. Compiled with Cygwin 3.5.4.1\
+CygMonit 5.33 (x64): runs on x64 Windows 7, Windows 8, Windows Server 2008 R2 and Windows Server 2012. Compiled with Cygwin 3.4.10.1\
+CygMonit 5.25.1 (x64)/(x86): runs on Windows Vista, Windows Server 2008. Compiled with Cygwin 3.3.6.1\
+CygMonit 5.14 (x86): runs on Windows XP and Windows Server 2003/2003 R2. Compiled with Cygwin 2.6.0.1\
+CygMonit 5.10 (x86): runs on Windows 2000 and Windows XP pre-SP3. Compiled with Cygwin 1.7.35.1\
 
 
 To create de development environments, I followed the latest cygwin.dll branch version by the latest setup version, which criteria is found in: 
