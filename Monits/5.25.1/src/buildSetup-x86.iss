@@ -54,9 +54,10 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 ; 2147483656:error:140E6118:SSL routines:ssl_cipher_process_rulestr:invalid command:ssl/ssl_ciph.c:1030:
 ; 2147483656:error:140A90A1:SSL routines:SSL_CTX_new:library has no ciphers:ssl/ssl_lib.c:3091:
 ; I know this is a brute force solve problem but for now couldn't find easier one. 
-Source: "..\..\..\PRODUCTION\{#CgywinArchitecture}-{#CgywinVersion}\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs; Attribs: System	
-Source: "installMonitService.bat"; DestDir: "{app}\Setup"; Flags: ignoreversion
+Source: "installMonitService.bat"; DestDir: "{app}\Setup"; Flags: ignoreversion; BeforeInstall: StopService('CygMonitSvc')
 Source: "removeMonitService.bat"; DestDir: "{app}\Setup"; Flags: ignoreversion
+Source: "..\..\..\PRODUCTION\{#CgywinArchitecture}-{#CgywinVersion}\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs; Attribs: System
+
 
 [Icons]
 Name: "{autoprograms}\{#AppName}"; Filename: "{app}\Cygwin.bat"
@@ -70,3 +71,12 @@ Filename: "{app}\Setup\installMonitService.bat";  Flags: runascurrentuser shelle
 [UninstallRun]
 Filename: "{sys}\sc.exe"; Parameters: "stop CygMonitSvc"; Flags: runhidden
 Filename: "{app}\Setup\removeMonitService.bat";  Flags: runhidden
+
+[Code]
+procedure StopService(serviceName: String);
+var
+    resultCode: Integer;
+begin
+    Log('Trying sc stop CygMonitSvc');
+    Exec(ExpandConstant('sc.exe'), 'stop' + ' ' + serviceName, '', SW_HIDE, ewWaitUntilTerminated, resultCode);    
+end;

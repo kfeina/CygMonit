@@ -3,9 +3,13 @@
 ###############################################################################
 set init        #We use monit as a service (foreground program launched by a background program cygrunsrv)
 
+set pidfile /var/run/monit.pid # Removing some /home/SYSTEM dependencies
+set idfile /var/lib/.monit.id # Removing some /home/SYSTEM dependencies
+set statefile /var/lib/.monit.state # Removing some /home/SYSTEM dependencies
+set logfile /var/log/monit.log # Removing some /home/SYSTEM dependencies
+
 set daemon 60 with start delay 15 
 
-set logfile /var/log/monit.log
 set mailserver mailserver.mydomain.com
 
 set eventqueue  basedir /tmp/monitqueue slots 500

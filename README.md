@@ -87,7 +87,7 @@ Find log information of the service at:
 `/var/log/CygMonitSvc.log`
 
 
-**Unattended deployment / silent setup?** 
+**Unattended deployment / silent setup** 
 
 Create a bat file with a content similar to: 
 
@@ -108,14 +108,21 @@ For better performance and issue solving, add the install path folder "C:\Progra
 
 **Older releases**
 
-[CygMonit 5.33 (x64)](https://github.com/kfeina/CygMonit/releases/download/Monit-5.33.0(x64)-for-Windows/CygMonit_5.33.0_Setup-x64.exe)\
-[CygMonit 5.25.1 (x64)](https://github.com/kfeina/CygMonit/releases/download/Monit-5.25.1(x64)-for-Windows/CygMonit_5.25.1_Setup-x64.exe)\
-[CygMonit 5.25.1 (x86)](https://github.com/kfeina/CygMonit/releases/download/Monit-5.25.1-for-Windows/CygMonit_5.25.1_Setup-x86.exe)\
-[CygMonit 5.14 (x86)](https://github.com/kfeina/CygMonit/releases/download/Monit-5.14-for-Windows/CygMonit_5.14_Setup-x86.exe)\
-[CygMonit 5.10 (x86)](https://github.com/kfeina/CygMonit/releases/download/Monit-5.10-for-Windows/CygMonit_5.10_Setup-x86.exe)
+[CygMonit 5.33 (x64)- cygwin3.4.10.1](https://github.com/kfeina/CygMonit/releases/download/Monit-5.33.0(x64)-for-Windows/CygMonit_5.33.0_Setup-x64.exe)\
+[CygMonit 5.25.1 (x64) - cygwin3.3.6.1](https://github.com/kfeina/CygMonit/releases/download/Monit-5.25.1(x64)-for-Windows/CygMonit_5.25.1_Setup-x64.exe)\
+[CygMonit 5.25.1 (x86) - cygwin3.3.6.1](https://github.com/kfeina/CygMonit/releases/download/Monit-5.25.1-for-Windows/CygMonit_5.25.1_Setup-x86.exe)\
+[CygMonit 5.14 (x86) - cygwin2.6.0.1](https://github.com/kfeina/CygMonit/releases/download/Monit-5.14-for-Windows/CygMonit_5.14_Setup-x86.exe)\
+[CygMonit 5.10 (x86) - cygwin1.7.35.1](https://github.com/kfeina/CygMonit/releases/download/Monit-5.10-for-Windows/CygMonit_5.10_Setup-x86.exe)
 
 
 **Developer info**
+
+CygMonit 5.34 (x64) compiled with Cygwin 3.5.4.1 - Runs on x64 Windows 8.1 / 10 / 11 - Windows Server 2012 R2 / 2016 / 2019 / 2022 - and (hopefully) all upcoming releases of Windows.
+CygMonit 5.33 (x64) compiled with Cygwin 3.4.10.1 - Runs on x64 Windows 7, Windows 8, Windows Server 2008 R2 and Windows Server 2012
+CygMonit 5.25.1 (x64)/(x86) compiled with Cygwin 3.3.6.1 - Runs on x86/x64 Windows Vista, Windows Server 2008
+CygMonit 5.14 (x86) compiled with Cygwin 2.6.0.1 - Runs on Windows XP and Windows Server 2003/2003 R2
+CygMonit 5.10 (x86) compiled with Cygwin 1.7.35.1 - Runs on Windows 2000 and Windows XP pre-SP3
+
 
 To create de development environments, I followed the latest cygwin.dll branch version by the latest setup version, which criteria is found in: 
 http://ctm.crouchingtigerhiddenfruitbat.org/pub/cygwin/circa/
