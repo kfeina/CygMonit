@@ -105,7 +105,7 @@ Adapt these bat files to your requirements.
 
 Exclude the following folders: "C:\Program Files\CygMonit" or "C:\Program Files (x86)\CygMonit".
 
-If you have **exploit protection** exclude the processes from having ASLR and a like. 
+If you have **exploit protection** exclude the processes from having **DEP**, **ASLR** and alike. 
 
 For example in windows defender: 
 
@@ -113,6 +113,8 @@ For example in windows defender:
     `<DEP Enable="false" EmulateAtlThunks="false" />`
     `<ASLR ForceRelocateImages="false" RequireInfo="false" BottomUp="false" HighEntropy="false" />`
 `</AppConfig>`
+
+**Note**: This will prevent cygwin fork() issues. 
 
 
 **Older releases**
