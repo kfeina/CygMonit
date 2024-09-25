@@ -66,6 +66,7 @@ Name: "{autodesktop}\{#AppName}"; Filename: "{app}\Cygwin.bat"; Tasks: desktopic
 [Run]
 ;Filename: "{app}\bin\bash.exe"; Parameters: "-l -c ""/Setup/buildMonitService.sh"""; Flags: runascurrentuser shellexec waituntilterminated; Description: "This package is self explanatory"
 Filename: "{app}\Setup\removeMonitService.bat";  Flags: runascurrentuser shellexec waituntilterminated; Description: "This package is self explanatory"
+Filename: "{app}\bin\ash.exe"; Parameters: "-c ""/bin/rebaseall"""; Flags: runascurrentuser shellexec waituntilterminated; Description: "Rebaseall to avoid fork() problems"
 Filename: "{app}\Setup\installMonitService.bat";  Flags: runascurrentuser shellexec waituntilterminated; Description: "This package is self explanatory"
 
 [UninstallRun]
